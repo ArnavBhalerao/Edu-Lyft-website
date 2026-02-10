@@ -1,20 +1,34 @@
-body {
+/* ===== Global Reset ===== */
+* {
   margin: 0;
-  font-family: Arial;
-  background: #0d0f12;
-  color: white;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
+body {
+  background: #0b0f14;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* ===== Navbar ===== */
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 20px 8%;
-  background: #111418;
+  background: rgba(15, 20, 25, 0.9);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
-  font-weight: bold;
   font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .logo span {
@@ -22,32 +36,184 @@ header {
 }
 
 nav a {
-  margin: 0 15px;
+  margin: 0 18px;
   text-decoration: none;
-  color: #ccc;
+  color: #cfcfcf;
+  font-size: 15px;
+  transition: 0.3s ease;
 }
 
 nav a:hover {
   color: #4CAF50;
 }
 
-button {
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: none;
+/* ===== Buttons ===== */
+.btn-primary {
   background: #4CAF50;
-  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 25px;
+  color: #ffffff;
   cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
-.hero {
-  padding: 120px 8%;
+.btn-primary:hover {
+  background: #43a047;
+  box-shadow: 0px 0px 20px rgba(76, 175, 80, 0.4);
 }
 
-.hero h1 {
-  font-size: 50px;
-}
-
-.hero span {
+.btn-outline {
+  border: 1px solid #4CAF50;
+  background: transparent;
+  padding: 9px 20px;
+  border-radius: 25px;
   color: #4CAF50;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #4CAF50;
+  color: #fff;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 120px 8%;
+  min-height: 90vh;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-left h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.hero-left h1 span {
+  color: #4CAF50;
+}
+
+.hero-left h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+}
+
+.hero-left p {
+  color: #a0a0a0;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* Logo / Image */
+.hero-right img {
+  width: 350px;
+  max-width: 100%;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0px 0px 40px rgba(76, 175, 80, 0.35));
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ===== Section Styling ===== */
+.section {
+  padding: 100px 8%;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.section h2 span {
+  color: #4CAF50;
+}
+
+.section p {
+  color: #9e9e9e;
+  margin-bottom: 50px;
+}
+
+/* ===== Cards ===== */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #11161d;
+  padding: 30px;
+  border-radius: 16px;
+  width: 260px;
+  border: 1px solid #1c242e;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: #4CAF50;
+  box-shadow: 0px 0px 25px rgba(76, 175, 80, 0.15);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #9e9e9e;
+  font-size: 14px;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #0f1419;
+  color: #888;
+  margin-top: 60px;
+  border-top: 1px solid #1c242e;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left h1 {
+    font-size: 40px;
+  }
+
+  .hero-right {
+    margin-top: 40px;
+  }
+
+  nav a {
+    margin: 0 10px;
+  }
 }
