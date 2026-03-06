@@ -1,4 +1,4 @@
-/* GLOBAL */
+/* RESET */
 
 *{
 margin:0;
@@ -19,7 +19,7 @@ color:white;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:25px 60px;
+padding:22px 60px;
 background:#07131a;
 position:sticky;
 top:0;
@@ -89,6 +89,7 @@ justify-content:space-between;
 padding:120px 80px;
 max-width:1200px;
 margin:auto;
+min-height:70vh;
 }
 
 .hero-text{
@@ -96,19 +97,15 @@ max-width:520px;
 }
 
 .hero-text h1{
-font-size:56px;
-margin-bottom:20px;
-}
-
-.hero-text span{
-color:#7edc9a;
+font-size:54px;
+margin-bottom:16px;
 }
 
 .hero-text p{
 color:#b6c0c8;
 font-size:18px;
-margin-bottom:30px;
 line-height:1.6;
+margin-bottom:12px;
 }
 
 .hero-btn{
@@ -119,15 +116,21 @@ border-radius:30px;
 font-weight:600;
 text-decoration:none;
 display:inline-block;
+margin-top:20px;
+transition:0.2s;
+}
+
+.hero-btn:hover{
+transform:scale(1.05);
 }
 
 
 /* HERO IMAGE */
 
 .hero img{
-width:350px;
-border-radius:20px;
-box-shadow:0 0 40px rgba(0,255,150,0.15);
+width:330px;
+border-radius:26px;
+box-shadow:0 0 50px rgba(0,255,150,0.15);
 }
 
 
@@ -145,7 +148,7 @@ margin-bottom:40px;
 }
 
 
-/* GRID */
+/* GRID LAYOUT */
 
 .grid{
 display:grid;
@@ -158,14 +161,14 @@ gap:30px;
 
 .card{
 background:#0b1a22;
-padding:30px;
-border-radius:14px;
+padding:32px;
+border-radius:16px;
 transition:0.2s;
 }
 
 .card:hover{
-transform:translateY(-5px);
-box-shadow:0 0 20px rgba(0,255,150,0.05);
+transform:translateY(-6px);
+box-shadow:0 0 25px rgba(0,255,150,0.08);
 }
 
 .card h3{
@@ -179,14 +182,14 @@ line-height:1.6;
 }
 
 
-/* INFO SECTIONS (ABOUT / SAFETY / PRIVACY) */
+/* INFO SECTIONS */
 
 .info-section{
 background:#0b1a22;
 padding:35px;
-border-radius:14px;
+border-radius:16px;
 margin-bottom:30px;
-box-shadow:0 0 15px rgba(0,255,120,0.04);
+box-shadow:0 0 20px rgba(0,255,120,0.04);
 }
 
 .info-section h2{
@@ -217,7 +220,7 @@ color:#c3ccd3;
 background:#0e2530;
 border-left:4px solid #7edc9a;
 padding:22px;
-border-radius:8px;
+border-radius:10px;
 margin-top:25px;
 color:#d5dde2;
 }
@@ -238,7 +241,7 @@ text-decoration:underline;
 /* FOOTER */
 
 .footer{
-margin-top:120px;
+margin-top:80px;
 padding:40px;
 text-align:center;
 color:#8f9aa2;
@@ -261,14 +264,19 @@ text-decoration:underline;
 
 @media(max-width:900px){
 
+.navbar{
+padding:20px 30px;
+}
+
 .hero{
 flex-direction:column;
 gap:60px;
 text-align:center;
+padding:80px 40px;
 }
 
 .hero img{
-width:250px;
+width:260px;
 }
 
 .grid{
@@ -277,6 +285,10 @@ grid-template-columns:1fr;
 
 .nav-links{
 display:none;
+}
+
+.page{
+padding:80px 40px;
 }
 
 }
