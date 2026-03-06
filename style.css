@@ -8,6 +8,7 @@ font-family:Arial, Helvetica, sans-serif;
 body{
 background:#050f16;
 color:white;
+line-height:1.6;
 }
 
 /* NAVBAR */
@@ -17,10 +18,11 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:25px 80px;
+background:#040c12;
 }
 
 .logo-text{
-font-size:24px;
+font-size:26px;
 font-weight:bold;
 }
 
@@ -31,7 +33,7 @@ color:#6edb8f;
 nav a{
 margin:0 15px;
 text-decoration:none;
-color:#d0d0d0;
+color:#cfcfcf;
 font-size:15px;
 }
 
@@ -43,21 +45,21 @@ color:#6edb8f;
 
 .signin-btn{
 background:#6edb8f;
-padding:10px 20px;
-border-radius:20px;
+padding:10px 22px;
+border-radius:22px;
 color:black;
 text-decoration:none;
 font-weight:bold;
 }
 
-/* HERO */
+/* HERO SECTION */
 
 .hero{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:80px;
-height:80vh;
+height:85vh;
 }
 
 .hero-left{
@@ -93,6 +95,10 @@ font-weight:bold;
 cursor:pointer;
 }
 
+.cta:hover{
+background:#58c07b;
+}
+
 /* LOGO */
 
 .logo{
@@ -107,4 +113,45 @@ footer{
 text-align:center;
 padding:30px;
 color:#8a8a8a;
+font-size:14px;
+}
+
+/* PAGE SECTIONS */
+
+.page{
+padding:120px 80px;
+max-width:1100px;
+margin:auto;
+}
+
+.page h1{
+font-size:40px;
+margin-bottom:40px;
+}
+
+/* GRID LAYOUT */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+}
+
+/* CARDS */
+
+.card{
+background:#0b1a22;
+padding:30px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px rgba(0,255,120,0.1);
+}
+
+.card h3{
+color:#6edb8f;
+margin-bottom:10px;
 }
