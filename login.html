@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Login</title>
-  <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login | EDU-LYFT</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
-  <header class="navbar">
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
 
 <a href="index.html" class="logo-link">
 <div class="logo-text">
@@ -24,41 +37,75 @@ EDU-<span>LYFT</span>
 <a href="login.html" class="signin-btn">Sign In</a>
 
 </header>
-<body>
 
-<div style="padding:100px;text-align:center;">
-  <h2>Login</h2>
 
-  <input type="email" id="email" placeholder="Email"><br><br>
-  <input type="password" id="password" placeholder="Password"><br><br>
-  <button id="loginBtn">Login</button>
+
+<!-- LOGIN SECTION -->
+
+<section class="login-container">
+
+<div class="login-card">
+
+<h1>Login</h1>
+
+<input type="email" id="email" placeholder="Email">
+
+<input type="password" id="password" placeholder="Password">
+
+<button id="loginBtn" class="login-btn">Login</button>
+
 </div>
 
-<script type="module">
-import { auth } from "./firebase.js";
-import { signInWithEmailAndPassword } from 
-"https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+</section>
 
-document.getElementById("loginBtn").addEventListener("click", async () => {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
 
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    window.location.href = "dashboard.html";
-  } catch (err) {
-    alert(err.message);
-  }
-});
-</script>
-<footer>
 
-<p>
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<a href="privacy.html">Privacy Policy</a> |
+<a href="terms.html">Terms of Service</a>
+
+<p style="margin-top:10px;">
 © 2026 EDU-LYFT. All rights reserved.
 </p>
 
 </footer>
 
+
+
+<!-- FIREBASE LOGIN SCRIPT -->
+
+<script type="module">
+
+import { auth } from "./firebase.js";
+
+import { signInWithEmailAndPassword } 
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+
+document.getElementById("loginBtn").addEventListener("click", async () => {
+
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
+
+try {
+
+await signInWithEmailAndPassword(auth, email, password);
+
+window.location.href = "dashboard.html";
+
+} catch (err) {
+
+alert(err.message);
+
+}
+
+});
+
+</script>
+
+
 </body>
 </html>
-
