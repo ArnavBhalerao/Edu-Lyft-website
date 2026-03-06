@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Register</title>
-  <link rel="stylesheet" href="style.css">
+<title>Register | EDU-LYFT</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <header class="navbar">
 
 <a href="index.html" class="logo-link">
@@ -25,47 +27,77 @@ EDU-<span>LYFT</span>
 <a href="login.html" class="signin-btn">Sign In</a>
 
 </header>
-<div class="container">
-  <h2>Register</h2>
 
-  <input type="email" id="email" placeholder="Email">
-  <input type="password" id="password" placeholder="Password">
-  <button id="registerBtn">Register</button>
 
-  <p>Already have account? <a href="login.html">Login</a></p>
+<section class="register-container">
+
+<div class="register-card">
+
+<h1>Create Account</h1>
+
+<input type="email" id="email" placeholder="Email">
+
+<input type="password" id="password" placeholder="Password">
+
+<button id="registerBtn" class="register-btn">Register</button>
+
+<p>Already have account? <a href="login.html">Login</a></p>
+
 </div>
 
+</section>
+
+
+<footer class="footer">
+
+<a href="privacy.html">Privacy Policy</a> |
+<a href="terms.html">Terms of Service</a>
+
+<p style="margin-top:10px;">
+© 2026 EDU-LYFT. All rights reserved.
+</p>
+
+</footer>
+
+
 <script type="module">
+
 import {
-  auth,
-  db,
-  createUserWithEmailAndPassword,
-  doc,
-  setDoc
+auth,
+db,
+createUserWithEmailAndPassword,
+doc,
+setDoc
 } from "./firebase.js";
 
 document.getElementById("registerBtn").addEventListener("click", async () => {
 
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
 
-  try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    const user = userCredential.user;
+try {
 
-    await setDoc(doc(db, "users", user.uid), {
-      email: email,
-      createdAt: new Date()
-    });
+const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
-    alert("Registered Successfully!");
-    window.location.href = "dashboard.html";
+const user = userCredential.user;
 
-  } catch (error) {
-    alert(error.message);
-  }
+await setDoc(doc(db, "users", user.uid), {
+email: email,
+createdAt: new Date()
+});
+
+alert("Registered Successfully!");
+
+window.location.href = "dashboard.html";
+
+} catch (error) {
+
+alert(error.message);
+
+}
 
 });
+
 </script>
 
 </body>
